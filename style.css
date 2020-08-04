@@ -1,0 +1,435 @@
+.container {
+  background: url(./img/background.jpg);
+  background-size: cover;
+  display: flex;
+  max-width: 1440px;
+  min-width: 320px;
+  height: 100vh;
+  margin: auto;
+}
+
+.menu { margin: 0 25px 0 100px; }
+
+.title {
+  color: #fff;
+	margin: 50px 0 20px 0;
+	font: normal bold 57px/ 67px 'Roboto', sans-serif;
+}
+
+.subtitle {
+  color: #fff;
+  margin: 0 0 60px 0;
+  font: normal bold 19px/ 21px 'Roboto', sans-serif;
+}
+
+.menu__level-selection {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.level_btn {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+	font: normal bold 50px/ 59px 'Roboto', sans-serif;
+  outline: none;
+  padding-left: 40px;
+}
+
+.level_btn:hover {
+  opacity: .8;
+  cursor: pointer;
+  position: relative;
+}
+
+.level_checked::before {
+  content: '';
+  background-color: #d62b2e;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+}
+
+.begin-button {
+  background: #d62b2e;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font: normal bold 32px/ 37px 'Roboto', sans-serif;
+  height: 90px;
+  width: 350px;
+  outline: none;
+}
+
+.begin-button:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.images {
+  position: absolute;
+  top: 40%;
+  right: 8%;
+}
+
+.first-card {
+  background-image: url(./img/card.png);
+  height: 341px;
+  width: 218px;
+  transform: rotate(11.9deg);
+}
+
+.second-card {
+  background-image: url(./img/card.png);
+  height: 341px;
+  width: 218px;
+  position: relative;
+  right: 45px;
+  top: 20px;
+  transform: rotate(39.26deg);
+}
+
+/* style js */
+
+.card-wrap {
+  cursor: pointer;
+  height: 340px;
+  width: 220px;
+  position: relative;
+  transform-style: preserve-3d;
+	transition: transform .8s;
+}
+
+.card-wrap__hover:hover {
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  transform: rotate(-3.08deg) translateY(-15px);
+  transition: .5s ease;
+}
+
+.card__click { transform: rotateY(180deg); }
+
+.card__back {
+  background: url(./img/card.png) no-repeat;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.card__game-over {
+  background: url(./img/game-over.png) no-repeat;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+	-webkit-backface-visibility: hidden;
+	border-radius: 10px;
+}
+
+.card__winner {
+  background: url(./img/card-bag.jpg) no-repeat;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+	-webkit-backface-visibility: hidden;
+	border-radius: 10px;
+}
+
+.three-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 340px;
+  width: 770px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.six-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 750px;
+  width: 770px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.ten-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 750px;
+  width: 1180px;
+  margin: auto;
+  perspective: 1000px;
+}
+
+/* Media queries */
+
+@media (min-width: 1025px) and (max-width: 1224px) {
+
+  .menu { margin: 0 25px 0 70px; }
+
+  .level_btn {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .ten-card .card-wrap,
+  .ten-card .card__back,
+  .ten-card .card__game-over,
+  .ten-card .card__winner {
+    background-size: 175px 270px;
+    height: 270px;
+    width: 175px;
+  }
+
+  .ten-card {
+    height: 570px;
+    width: 935px;
+  }
+}
+
+@media (min-width: 987px) and (max-width: 1024px) {
+
+  .menu { margin: 0 25px 0 70px; }
+
+  .level_btn {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .begin-button {
+    font-size: 30px;
+    line-height: 40px;
+    height: 70px;
+    width: 290px;
+  }
+
+  .images { display: none; }
+
+  .card-wrap,
+  .card__back,
+  .card__game-over,
+  .card__winner {
+    background-size: 175px 270px;
+    height: 270px;
+    width: 175px;
+  }
+
+  .three-card {
+    height: 270px;
+    width: 575px;
+  }
+
+  .six-card {
+    height: 580px;
+    width: 575px;
+  }
+
+  .ten-card {
+    height: 570px;
+    width: 935px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 986px) {
+
+  .menu { margin: 0 0 0 70px; }
+
+  .menu__level-selection { margin-bottom: 50px; }
+
+  .level_btn {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .level_checked::before {
+    top: 15px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .begin-button {
+    font-size: 30px;
+    line-height: 40px;
+    height: 70px;
+    width: 250px;
+  }
+
+  .images { display: none; }
+
+  .card-wrap,
+  .card__back,
+  .card__game-over,
+  .card__winner {
+    background-size: 175px 270px;
+    height: 270px;
+    width: 175px;
+  }
+
+  .three-card {
+    height: 270px;
+    width: 575px;
+  }
+
+  .six-card {
+    height: 580px;
+    width: 575px;
+  }
+
+  .ten-card .card-wrap,
+  .ten-card .card__back,
+  .ten-card .card__game-over,
+  .ten-card .card__winner {
+    background-size: 120px 170px;
+    height: 170px;
+    width: 120px;
+  }
+
+  .ten-card {
+    height: 360px;
+    width: 640px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .menu { margin: 0 25px 0 50px; }
+
+  .title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .menu__level-selection { margin-bottom: 50px; }
+
+  .level_btn {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .level_checked::before {
+    top: 15px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .begin-button {
+    font-size: 30px;
+    line-height: 40px;
+    height: 70px;
+    width: 250px;
+  }
+
+  .images { display: none; }
+
+  .card-wrap,
+  .card__back,
+  .card__game-over,
+  .card__winner {
+    background-size: 145px 230px;
+    height: 230px;
+    width: 145px;
+  }
+
+  .three-card {
+    height: 230px;
+    width: 455px;
+  }
+
+  .six-card {
+    height: 470px;
+    width: 455px;
+  }
+
+  .ten-card .card-wrap,
+  .ten-card .card__back,
+  .ten-card .card__game-over,
+  .ten-card .card__winner {
+    background-size: 85px 140px;
+    height: 140px;
+    width: 85px;
+  }
+
+  .ten-card {
+    height: 290px;
+    width: 465px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .menu { margin: 0 15px 0 30px; }
+
+  .title {
+    font-size: 35px;
+    line-height: 45px;
+    margin: 30px 0 15px 0;
+  }
+
+  .subtitle { margin-bottom: 30px; }
+
+  .menu__level-selection { margin-bottom: 40px; }
+
+  .level_btn {
+    margin: 0 0 5px 0;
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .level_checked::before {
+    top: 12px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .begin-button {
+    font-size: 25px;
+    line-height: 35px;
+    height: 60px;
+    width: 230px;
+  }
+
+  .images { display: none; }
+
+  .card-wrap,
+  .card__back,
+  .card__game-over,
+  .card__winner {
+    background-size: 85px 135px;
+    height: 135px;
+    width: 85px;
+  }
+
+  .three-card {
+    height: 135px;
+    width: 275px;
+  }
+
+  .six-card {
+    height: 290px;
+    width: 275px;
+  }
+
+  .ten-card {
+    height: 555px;
+    width: 275px;
+  }
+}
